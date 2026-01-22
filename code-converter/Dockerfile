@@ -9,11 +9,11 @@ COPY code-converter/ ./code-converter/
 # Move into project directory
 WORKDIR /app/code-converter
 
-#  Fix permission for mvnw
+# Fix permission for mvnw
 RUN chmod +x mvnw
 
-# Build
-RUN ./mvnw clean package -DskipTests
+# Build (skip tests completely)
+RUN ./mvnw clean package -Dmaven.test.skip=true
 
 # ---- Run stage ----
 FROM eclipse-temurin:17-jre
