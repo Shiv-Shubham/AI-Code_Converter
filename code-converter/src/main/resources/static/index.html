@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Converter</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="topbar">
+        <h2>Code Converter</h2>
+
+        <select id="to">
+            <option>Java</option>
+            <option>C++</option>
+            <option>Python</option>
+            <option>JavaScript</option>
+        </select>
+
+        <button onclick="convert()">Convert</button>
+        <button class="secondary" onclick="clearInput()">Clear</button>
+        <button class="secondary" onclick="copyOutput()">Copy</button>
+    </div>
+
+
+    <div class="panels">
+        <div class="panel">
+            <div class="panel-title">Input</div>
+            <textarea id="code" placeholder="// Paste or type your code here..."></textarea>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">Output</div>
+            <div class="output-wrapper">
+                <div id="loadingOverlay" class="loading-overlay" style="display:none;">
+                    Converting...
+                </div>
+                <pre id="outputBox"><code id="output" class="language-java"></code></pre>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<div id="toast" class="toast">Copied to clipboard</div>
+</body>
+</html>

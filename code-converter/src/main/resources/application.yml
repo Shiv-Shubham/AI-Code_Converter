@@ -1,0 +1,7 @@
+gemini:
+  api-key: ${GEMINI_API_KEY:}
+groq:
+  api-key: ${GROQ_API_KEY:}
+
+ollama:
+  base-url: http://localhost:11434
