@@ -9,6 +9,9 @@ COPY code-converter/ ./code-converter/
 # Move into project directory
 WORKDIR /app/code-converter
 
+#  Fix permission for mvnw
+RUN chmod +x mvnw
+
 # Build
 RUN ./mvnw clean package -DskipTests
 
